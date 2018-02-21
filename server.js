@@ -110,6 +110,9 @@ app.delete('/authors/:id', function(req, res) {
         }
     })
 })
+app.all("*", (req,res,next) => {
+    res.sendFile(path.resolve("./client/dist/index.html"))
+});
 
 // Setting our Server to Listen on Port: 8000
 app.listen(8000, function() {
